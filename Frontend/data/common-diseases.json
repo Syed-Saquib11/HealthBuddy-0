@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Influenza (Flu)",
+    "description": "A contagious respiratory illness caused by influenza viruses.",
+    "symptoms": ["Fever", "Cough", "Sore throat", "Muscle aches"],
+    "prevention": "Annual flu vaccine, hand hygiene, cover coughs.",
+    "treatment": "Rest, fluids, antiviral medications."
+  },
+  {
+    "name": "Common Cold",
+    "description": "A viral infection of your nose and throat.",
+    "symptoms": ["Runny nose", "Sneezing", "Cough", "Congestion"],
+    "prevention": "Hand washing, avoid close contact with sick people.",
+    "treatment": "Rest, fluids, over-the-counter cold remedies."
+  }
+]

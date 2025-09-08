@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Health Buddy - Home</title>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Health Buddy</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="outbreak.html">Outbreak Tracking</a>
+        <a href="report.html">Report a Disease</a>
+        <a href="common-disease.html">Common Diseases</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>Welcome to the Disease Outbreak Tracker</h2>
+      <p>
+        Stay aware of local health risks with timely updates, community reporting, and educational resources.
+        Designed for students and young adults who want to stay safe and informed.
+      </p>
+    </section>
+
+    <section class="features">
+      <h3>Features</h3>
+      <ul>
+        <li ><a href="report.html">Report</a></li>
+        <li ><a href="outbreak.html">Outbreak tracking</a></li>
+        <li><a href="common-disease.html">Common Disease</a></li>
+        <li><a href="">Ai syntom checker</a></li>
+        <li><a href="">fsfsdf</a></li>
+      </ul>
+    </section>
+
+    <section class="hot-outbreaks">
+      <h3>Hot Outbreaks</h3>
+      <div id="hotOutbreaks">
+        <!-- Outbreak data will be loaded here -->
+        <p>Loading latest outbreak data...</p>
+      </div>
+    </section>
+
+    <section class="report-outbreak">
+      <h3>Report Outbreak</h3>
+      <div id="hotOutbreaks">
+        <!-- Outbreak data will be loaded here -->
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae in culpa neque autem laboriosam nulla quod placeat fugiat fugit nisi?</p>
+      </div>
+      <button><a href="report.html">Click to report</a></button>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Health Buddy. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+  <script>
+    // Load hot outbreaks immediately when page loads
+    document.addEventListener('DOMContentLoaded', () => {
+      loadHotOutbreaks();
+    });
+  </script>
+</body>
+</html>

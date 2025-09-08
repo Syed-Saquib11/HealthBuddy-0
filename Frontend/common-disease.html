@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Common Diseases - Health Buddy</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Health Buddy</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="outbreak.html">Outbreak Tracking</a>
+        <a href="report.html">Report a Disease</a>
+        <a href="common-disease.html">Common Diseases</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="common-diseases">
+      <h2>Common Diseases</h2>
+
+      <input type="text" id="searchInput" placeholder="Search diseases..." />
+
+      <ul id="diseaseList"></ul>
+
+      <section id="diseaseDetail" style="display:none;">
+        <h3 id="diseaseName"></h3>
+        <p id="diseaseDescription"></p>
+        <strong>Symptoms</strong>
+        <ul id="symptomList"></ul>
+        <strong>Prevention</strong>
+        <p id="preventionText"></p>
+        <strong>Treatment</strong>
+        <p id="treatmentText"></p>
+        <button id="closeDetail">Close</button>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Health Buddy. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/common-disease.js"></script>
+</body>
+</html>
