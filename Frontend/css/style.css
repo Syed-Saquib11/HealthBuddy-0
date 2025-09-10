@@ -128,3 +128,529 @@ footer {
     padding: 0.5rem;
   }
 }
+
+/* Common diseases — cards */
+.common-diseases #searchInput{
+  width:100%;
+  max-width:520px;
+  padding:.6rem .8rem;
+  border:1px solid #e2e8f0;
+  border-radius:8px;
+  margin:.25rem 0 1rem 0;
+  font-size:1rem;
+}
+
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1rem;
+}
+
+.disease-card{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,.06);
+  padding:1rem 1.25rem;
+}
+
+.disease-card .head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:.25rem;
+}
+
+.disease-card .title{
+  display:flex; gap:.5rem; align-items:center;
+}
+
+.disease-card h3{ margin:0; font-size:1.05rem; }
+.disease-card p.desc{ margin:.35rem 0; color:#4b5563; }
+
+.badge{
+  padding:.25rem .55rem;
+  border-radius:9999px;
+  font-size:.8rem;
+  font-weight:600;
+}
+.badge.high{   background:#fee2e2; color:#b91c1c; }
+.badge.medium{ background:#fef3c7; color:#92400e; }
+.badge.low{    background:#dcfce7; color:#166534; }
+
+.chips{ display:flex; flex-wrap:wrap; gap:.4rem; margin:.5rem 0; }
+.chip{
+  background:#f1f5f9;
+  border:1px solid #e2e8f0;
+  border-radius:9999px;
+  padding:.22rem .55rem;
+  font-size:.8rem;
+}
+
+.disease-card details summary{
+  cursor:pointer;
+  font-weight:600;
+  margin-top:.25rem;
+  list-style: none; /* Chrome keeps triangle, this hides default */
+}
+.disease-card details summary::marker{ content:""; }
+
+.disease-card details .more{ margin-top:.5rem; }
+.disease-card h4{ margin:.5rem 0 .25rem; font-size:1rem; color:#374151; }
+.disease-card .source{
+  font-size:.8rem; font-style:italic; color:#6b7280;
+  border-top:1px dashed #e5e7eb; margin-top:.5rem; padding-top:.5rem;
+}
+
+/* .main-header {
+  background: #1976d2;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 2vw;
+  justify-content: space-between;
+}
+.brand {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 2px #1657a2;
+  transition: color 0.2s;
+}
+.brand:hover {
+  color: #90caf9;
+}
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.06rem;
+  font-weight: 500;
+  padding: 0.4em 0.8em;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-links a:hover,
+.nav-links a:focus {
+  background: #90caf9;
+  color: #034384;
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.8rem 4vw;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0.7rem;
+    width: 100%;
+    margin-top: 0.6rem;
+    display: none;
+    background: #1976d2;
+    padding: 0.5rem 0;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 2vw;
+    top: 1.2rem;
+  }
+} */
+a {
+  text-decoration: none;   /* removes underline */
+  color: inherit;          /* makes link take the parent’s text color */
+}
+
+
+
+.main-header {
+  background: #1976d2;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 1rem;
+}
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 2vw;
+  justify-content: space-between;
+}
+.brand {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 2px #1657a2;
+  transition: color 0.2s;
+}
+.brand:hover {
+  color: #90caf9;
+}
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.06rem;
+  font-weight: 500;
+  padding: 0.4em 0.8em;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-links a:hover,
+.nav-links a:focus {
+  background: #90caf9;
+  color: #034384;
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.8rem 4vw;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0.7rem;
+    width: 100%;
+    margin-top: 0.6rem;
+    display: none;
+    background: #1976d2;
+    padding: 0.5rem 0;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 2vw;
+    top: 1.2rem;
+  }
+}
+
+.intro2{
+  padding-top: 0.8rem;
+  padding-bottom: 2rem;
+}
+
+ #outbreak-cta {
+  background: #e3f0fa; /* very light blue */
+  border: 1.5px solid #90caf9;
+    color: #134e9b;
+      border-radius: 12px;  
+  margin: 2.5rem auto 2rem auto;
+  padding: 2.1rem 1.6rem 2rem 1.6rem;
+  max-width: 950px;
+  box-shadow: 0 2px 24px rgba(70,40,5,0.06);
+} 
+#outbreak-cta-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+ .outbreak-cta-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 0 .4rem 0;
+  color: #1565c0; /* deeper brand blue */
+} 
+
+
+
+
+.outbreak-cta-desc {
+  font-size: 1.13rem;
+  line-height: 1.6;
+  color: #264239;
+  margin-bottom: 0.7rem;
+  margin-top: 0;
+}
+
+ .outbreak-cta-btn {
+  display: inline-block;
+  padding: 0.7em 2.4em;
+  background: #1976d2; /* brand blue */
+  color: #fff;
+  border-radius: 7px;
+  font-size: 1.09rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 1px 6px rgba(50,40,5,0.09);
+  transition: background 0.18s, transform 0.16s;
+  letter-spacing: 0.01em;
+  margin-top: 0.65rem;
+} 
+
+ .outbreak-cta-btn:hover,
+.outbreak-cta-btn:focus {
+  background: #1356a0;
+  transform: translateY(-1.5px) scale(1.03);
+} 
+
+@media (max-width: 600px) {
+  #outbreak-cta {
+    padding: 1.2rem 0.55rem 1.2rem 0.55rem;
+  }
+  .outbreak-cta-heading {
+    font-size: 1.15rem;
+  }
+  .outbreak-cta-btn {
+    width: 100%;
+    text-align: center;
+    font-size: 1.02rem;
+    margin-top: 1rem;
+  }
+}
+
+
+.disease-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem 0 1rem 0;
+  justify-content: flex-start;
+}
+
+.disease-card {
+  background: #fff;
+  border: 1.5px solid #e3e9f2;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(70,100,180,0.06);
+  padding: 1.6rem 2.1rem 1.3rem 2.1rem;
+  max-width: 410px;
+  min-width: 340px;
+  position: relative;
+  transition: box-shadow 0.22s;
+  cursor: pointer;
+}
+
+.disease-card:hover {
+  box-shadow: 0 4px 24px rgba(40,80,160,0.11);
+}
+
+.disease-card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.disease-icon {
+  font-size: 2.1rem;
+}
+
+.disease-title {
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #1b4388;
+  margin-right: 1rem;
+}
+
+.severity-badge {
+  padding: 0.28em 0.95em;
+  border-radius: 18px;
+  font-size: 0.98rem;
+  font-weight: bold;
+  color: #fff;
+  margin-left: auto;
+  background: #73c16d; /* default low */
+}
+.severity-high { background: #e04747 !important; }
+.severity-medium { background: #f6c129 !important; color:#432; }
+.severity-low { background: #3ab160 !important; }
+
+.disease-card .card-body {
+  margin-top: 0.6rem;
+}
+
+/* .disease-chip-list {
+  margin: 0.25rem 0 1.1rem 0; 
+  display: flex; 
+  gap: 0.45rem; 
+  flex-wrap: wrap;
+} */
+
+.disease-card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0 1rem 0;
+  justify-items: center;
+}
+
+.disease-chip {
+  background: #eaf2fa;
+  border-radius: 10px;
+  padding: 0.2em 0.95em;
+  font-size: 0.98rem;
+  color: #23517b;
+  display: inline-block;
+  margin-bottom: 0.2em;
+  box-shadow: 0 1px 2px #eef6ff;
+}
+.disease-section-title {
+  font-weight: bold;
+  margin-top: 0.9em;
+  margin-bottom: 0.4em;
+  color: #264192;
+  font-size: 1.03em;
+}
+.disease-expand {
+  display: block;
+  background: #f9fbff;
+  border-top: 1px solid #ecedf3;
+  margin-top: 1.2rem;
+  padding-top: 0.6rem;
+}
+.disease-learn-btn {
+  display: block;
+  width: 100%;
+  margin: 1.2rem auto 0 auto;
+  padding: 0.8em 0;
+  font-weight: 600;
+  text-align: center;
+  color: #1976d2;
+  background: #f5fafd;
+  border: 1.5px solid #c9e2fc;
+  border-radius: 12px;
+  font-size: 1.08rem;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+.disease-learn-btn:hover {
+  background: #1976d2;
+  color: #fff;
+}
+@media (max-width: 780px) {
+  .disease-card-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .disease-card {
+    max-width: 95vw;
+    min-width: 0;
+    width: 96vw;
+    padding: 1rem;
+  }
+}
+
+#citySelect {
+  width: 260px;
+  padding: 0.6rem 2.4rem 0.6rem 1rem;
+  margin: 0.7rem auto 1.3rem auto;
+  display: block;
+  font-size: 1.07rem;
+  border-radius: 30px;
+  border: 1.5px solid #c8d5e8;
+  position: relative;
+  box-shadow: 0 2.5px 15px #e8ebfa33;
+}
+/* #citySelect:before {
+   For icon; needs separate markup or use background-image in select, not all browsers support */
+
+#cityMap {
+  width: 92%;
+  max-width: 700px;
+  height: 288px;
+  margin: 0 auto 2.2rem auto;
+  background: #f7f8fa;
+  border: 2px dotted #b7c3d0;
+  border-radius: 15px;
+  box-shadow: 0 1.5px 14px #dbe6f666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  color: #998;
+  font-size: 1.18rem;
+  user-select: none;
+  position: relative;
+}
+#cityMap::after {
+  content: "🗺️";
+  position: absolute;
+  left: 1.2em;
+  top: 0.7em;
+  font-size: 1.6em;
+  opacity: 0.15;
+  pointer-events: none;
+}
+#diseaseList {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 1.2rem 0;
+  display: flex;
+  gap: 1.3rem;
+  overflow-x: auto;
+  min-height: 56px;
+}
+#diseaseList li {
+  background: #e8f3ff;
+  padding: 0.53rem 1.3rem;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0.5px 4px #e5effb70;
+  border: 1.3px solid #bfe1fa;
+  color: #25648a;
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+#diseaseList li.selected,
+#diseaseList li:hover {
+  background: #1976d2;
+  color: #fff;
+  font-weight: bold;
+  border-color: #1976d2;
+}
+.disease-badge-hot {
+  margin-left: 0.7em;
+  color: #e24932;
+  font-size: 1.15em;
+}
+#diseaseList li[tabindex="0"] {
+  outline: none;
+}

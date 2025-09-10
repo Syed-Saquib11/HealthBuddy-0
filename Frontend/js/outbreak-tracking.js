@@ -6,7 +6,7 @@ const diseaseList = document.getElementById("diseaseList");
 const sourceInfo = document.getElementById("sourceInfo");
 const trendChartCtx = document.getElementById("trendChart").getContext('2d');
 
-let allOutbreaks = [];        // Combined data from official + user
+let allOutbreaks = [];       // Combined data from official + user
 let filteredOutbreaks = [];   // Filtered by selected city
 let trendingDiseases = [];    // Distinct trending diseases in selected city
 let selectedDisease = null;    // Currently selected disease for chart
@@ -43,6 +43,12 @@ function populateCitySelector() {
 
 // Filter outbreaks by selected city and update trending diseases list
 function filterByCity(city) {
+  if (!city) {
+    diseaseList.innerHTML = '<li style="background:transparent; border:none; color:#888; cursor:default;">Select a city to view trending diseases.</li>';
+    clearChart();
+    return;
+  }
+
   filteredOutbreaks = allOutbreaks.filter(o => o.city === city);
 
   // Aggregate diseases by total cases reported in this city
@@ -72,15 +78,25 @@ function renderDiseaseList() {
     clearChart();
     return;
   }
-  trendingDiseases.forEach(disease => {
+  trendingDiseases.forEach((disease, idx) => {
     const li = document.createElement("li");
     li.textContent = `${disease.name} (${disease.cases} cases)`;
     li.tabIndex = 0;
     li.classList.toggle("selected", disease.name === selectedDisease);
+
+    // Add hot 🔥 badge for top disease with more than 1 case
+    // if (idx === 0 && disease.cases > 1) {
+    //   const badge = document.createElement("span");
+    //   badge.textContent = " 🔥";
+    //   badge.className = "disease-badge-hot";
+    //   li.appendChild(badge);
+    // }
+
     li.addEventListener("click", () => selectDisease(disease.name));
     li.addEventListener("keydown", e => {
       if (e.key === "Enter" || e.key === " ") {
         selectDisease(disease.name);
+        e.preventDefault();
       }
     });
     diseaseList.appendChild(li);
@@ -99,7 +115,7 @@ function selectDisease(diseaseName) {
   renderTrendChart();
 }
 
-// Show chart info for selected disease & city
+// Show chart info for selected disease & city with fade-in effect
 function renderTrendChart() {
   if (!selectedDisease || !filteredOutbreaks.length) {
     clearChart();
@@ -120,51 +136,67 @@ function renderTrendChart() {
   const labels = Object.keys(casesByDate).sort();
   const cases = labels.map(date => casesByDate[date]);
 
-  // Determine source info (example: show if most reports were user or official)
-  const sources = diseaseData.reduce(
-    (acc, o) => {
-      acc[o.source] = (acc[o.source] || 0) + 1;
-      return acc;
-    }, {}
-  );
+  // Determine dominant source info (community or official)
+  const sources = diseaseData.reduce((acc, o) => {
+    acc[o.source] = (acc[o.source] || 0) + 1;
+    return acc;
+  }, {});
   const dominantSource = Object.entries(sources).reduce((a,b) => a[1]>b[1]?a:b, ["none",0])[0];
   sourceInfo.textContent = `Data sourced mainly from: ${dominantSource === "user" ? "Community Reports" : "Official Data"}`;
 
-  // If chart already exists, destroy before creating new one
-  if (trendChart) trendChart.destroy();
+  // Fade-out chart canvas before redraw
+  const canvas = document.getElementById("trendChart");
+  canvas.style.opacity = 0.2;
 
-  trendChart = new Chart(trendChartCtx, {
-    type: "line",
-    data: {
-      labels,
-      datasets: [{
-        label: `Cases of ${selectedDisease} in ${citySelect.value}`,
-        data: cases,
-        borderColor: "#007bff",
-        backgroundColor: "rgba(0,123,255,0.3)",
-        fill: true,
-        tension: 0.3,
-        pointRadius: 4,
-      }]
-    },
-    options: {
-      scales: {
-        x: {
-          title: {
-            display: true,
-            text: "Date"
+  setTimeout(() => {
+    if (trendChart) trendChart.destroy();
+
+    trendChart = new Chart(trendChartCtx, {
+      type: "line",
+      data: {
+        labels,
+        datasets: [{
+          label: `Cases of ${selectedDisease} in ${citySelect.value}`,
+          data: cases,
+          borderColor: "#007bff",
+          backgroundColor: "rgba(0,123,255,0.3)",
+          fill: true,
+          tension: 0.3,
+          pointRadius: 4,
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Date"
+            }
+          },
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: "Cases Reported"
+            }
           }
         },
-        y: {
-          beginAtZero: true,
-          title: {
+        plugins: {
+          tooltip: {
+            enabled: true,
+            mode: 'nearest',
+            intersect: false
+          },
+          legend: {
             display: true,
-            text: "Cases Reported"
+            position: 'top'
           }
         }
       }
-    }
-  });
+    });
+    canvas.style.opacity = 1;
+  }, 150);
 }
 
 // Clear the chart area if no data
@@ -177,19 +209,10 @@ function clearChart() {
   trendChartCtx.clearRect(0, 0, trendChartCtx.canvas.width, trendChartCtx.canvas.height);
 }
 
-// Event Listeners
+// Event listeners
 citySelect.addEventListener("change", e => {
   const city = e.target.value;
-  if (city) {
-    filterByCity(city);
-  } else {
-    // Clear everything if no city selected
-    filteredOutbreaks = [];
-    trendingDiseases = [];
-    diseaseList.innerHTML = "";
-    clearChart();
-    document.getElementById("cityMap").textContent = "Map for selected city will appear here (Coming soon)";
-  }
+  filterByCity(city);
 });
 
 // Load combined data on page load

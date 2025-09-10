@@ -9,7 +9,7 @@
     /* Inline CSS for the page */
     body {
       font-family: Arial, sans-serif;
-      margin: 1rem;
+      /* margin: 1rem; */
       background: #f9f9f9;
       color: #333;
     }
@@ -92,17 +92,21 @@
 </head>
 <body>
 
-      <header>
-    <div class="container">
-      <h1>Health Buddy</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="outbreak.html">Outbreak Tracking</a>
-        <a href="report.html">Report a Disease</a>
-        <a href="common-disease.html">Common Diseases</a>
-      </nav>
-    </div>
-  </header>
+  <header class="main-header">
+  <div class="navbar-container">
+    <a class="brand" href="index.html">Health Buddy</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="outbreak-tracking.html">Outbreak Tracking</a>
+      <a href="report.html">Report a Disease</a>
+      <a href="common-disease.html">Common Diseases</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+  </div>
+</header>
+
+
+
 
   <main class="container">
   <h1>Health Buddy: Community & Official Outbreak Insights</h1>
@@ -140,6 +144,15 @@
   <!-- Load Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="js/outbreak-tracking.js"></script>
+  <script>
+const toggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+toggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+</script>
+
+  </script>
 </body>
 </html>
 

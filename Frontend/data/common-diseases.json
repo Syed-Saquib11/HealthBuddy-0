@@ -12,5 +12,50 @@
     "symptoms": ["Runny nose", "Sneezing", "Cough", "Congestion"],
     "prevention": "Hand washing, avoid close contact with sick people.",
     "treatment": "Rest, fluids, over-the-counter cold remedies."
+  },
+  {
+    "name": "Diabetes Mellitus",
+    "description": "A group of diseases that result in too much sugar in the blood (high blood glucose).",
+    "symptoms": ["Increased thirst", "Frequent urination", "Extreme hunger", "Unexplained weight loss", "Fatigue"],
+    "severity": "High",
+    "seek_help": "If blood sugar levels are consistently high or if experiencing frequent infections",
+    "prevention": ["Maintain healthy weight", "Regular exercise", "Healthy diet", "Monitor blood sugar levels"],
+    "treatment": "Medication, insulin therapy, and lifestyle changes"
+  },
+  {
+    "name": "Hypertension (High Blood Pressure)",
+    "description": "A condition in which the blood pressure in the arteries is persistently elevated.",
+    "symptoms": ["Often none", "Headaches", "Shortness of breath", "Nosebleeds"],
+    "severity": "Medium",
+    "seek_help": "If blood pressure readings are consistently above 140/90 mmHg",
+    "prevention": ["Limit salt intake", "Maintain healthy weight", "Regular physical activity", "Limit alcohol consumption"],
+    "treatment": "Lifestyle changes and medications"
+  },
+  {
+    "name": "Tuberculosis (TB)",
+    "description": "A potentially serious infectious bacterial disease that mainly affects the lungs.",
+    "symptoms": ["Persistent cough", "Chest pain", "Coughing up blood", "Fatigue", "Fever", "Night sweats"],
+    "severity": "High",
+    "seek_help": "If cough lasts more than 3 weeks or see blood in sputum",
+    "prevention": ["Vaccination (BCG)", "Avoid close contact with untreated TB patients", "Good ventilation"],
+    "treatment": "Antibiotic medications for several months"
+  },
+  {
+    "name": "Malaria",
+    "description": "A mosquito-borne infectious disease that affects humans and other animals.",
+    "symptoms": ["Fever", "Chills", "Headache", "Nausea", "Vomiting"],
+    "severity": "High",
+    "seek_help": "If experiencing cyclical fever and chills, especially after travel to endemic areas",
+    "prevention": ["Use of mosquito nets", "Insect repellents", "Antimalarial medications when traveling"],
+    "treatment": "Antimalarial medications"
+  },
+  {
+    "name": "Asthma",
+    "description": "A condition in which a person's airways become inflamed, narrow and swell, producing extra mucus.",
+    "symptoms": ["Shortness of breath", "Chest tightness", "Wheezing", "Coughing"],
+    "severity": "Medium",
+    "seek_help": "If experiencing frequent or severe asthma attacks",
+    "prevention": ["Avoid triggers", "Use of inhalers", "Regular monitoring"],
+    "treatment": "Inhalers and other medications"
   }
 ]

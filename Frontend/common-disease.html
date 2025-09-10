@@ -7,17 +7,19 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Health Buddy</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="outbreak.html">Outbreak Tracking</a>
-        <a href="report.html">Report a Disease</a>
-        <a href="common-disease.html">Common Diseases</a>
-      </nav>
-    </div>
-  </header>
+  <header class="main-header">
+  <div class="navbar-container">
+    <a class="brand" href="index.html">Health Buddy</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="outbreak.html">Outbreak Tracking</a>
+      <a href="report.html">Report a Disease</a>
+      <a href="common-disease.html">Common Diseases</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+  </div>
+</header>
+
 
   <main class="container">
     <section class="common-diseases">
@@ -25,8 +27,7 @@
 
       <input type="text" id="searchInput" placeholder="Search diseases..." />
 
-      <ul id="diseaseList"></ul>
-
+     <div id="diseaseCardList" class="disease-card-list">
       <section id="diseaseDetail" style="display:none;">
         <h3 id="diseaseName"></h3>
         <p id="diseaseDescription"></p>
@@ -38,6 +39,7 @@
         <p id="treatmentText"></p>
         <button id="closeDetail">Close</button>
       </section>
+     </div>
     </section>
   </main>
 
@@ -47,6 +49,15 @@
     </div>
   </footer>
 
-  <script src="js/common-disease.js"></script>
+  <script src="js/common-disease.js">
+
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+</script>
+
+  </script>
 </body>
 </html>
