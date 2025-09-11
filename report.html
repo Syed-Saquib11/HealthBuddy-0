@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.css">
+  <title>Report Outbreak</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #1976d2;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .container {
+      padding: 1.5rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+    }
+
+    .card h2, .card h3 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .form input, 
+    .form select {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .form input:focus,
+    .form select:focus {
+      border-color: #1976d2;
+    }
+
+    .btn-primary {
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .btn-primary:hover {
+      background: #125ca1;
+    }
+
+    .report-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    .report-card h4 {
+      margin: 0 0 0.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .badge {
+      padding: 0.25rem 0.6rem;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      color: #fff;
+    }
+
+    .badge.low { background: #4caf50; }
+    .badge.medium { background: #ffc107; color: #000; }
+    .badge.high { background: #f44336; }
+
+    footer {
+      background: #1976d2;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+  <div class="navbar-container">
+    <a class="brand" href="index.html">Health Buddy</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="outbreak.html">Outbreak Tracking</a>
+      <a href="report.html">Report a Disease</a>
+      <a href="common-disease.html">Common Diseases</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+  </div>
+</header>
+
+
+  <main class="container">
+    <!-- Report Form -->
+    <section class="card">
+      <h2>Report an Outbreak</h2>
+      <form id="reportForm" class="form">
+        <!-- <input type="text" id="disease_name" placeholder="Disease Name" required />
+        <input type="text" id="city" placeholder="City" required />
+        <input type="text" id="state" placeholder="State" required />
+        <select id="severity" required> -->
+
+          <input type="text" id="disease_name" name="disease_name" placeholder="Disease Name" required />
+          <input type="text" id="city" name="city" placeholder="City" required />
+          <input type="text" id="state" name="state" placeholder="State" required />
+          <select id="severity" name="severity" required>
+
+
+          <option value="" disabled selected>Select severity</option>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+        <input type="number" id="cases_reported" name="cases_reported" placeholder="Cases Reported" required />
+        <button type="submit" class="btn-primary">Submit Report</button>
+      </form>
+    </section>
+
+   <div id="resultMessage" style="margin-top:12px;"></div>
+
+    <!-- Community Reports -->
+    <section class="card">
+      <h3>Previously Reported</h3>
+      <div id="communityReports">
+        <p>Loading previous reports...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 HealthBuddy | Report responsibly</p>
+  </footer>
+
+  <script src="js/report.js"></script>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+</script>
+<script>
+
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onload=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="HD3kMo_iaMbj16OvnH4nn";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onload()}else{window.addEventListener("load",onload)}})();
+
+</script>
+</body>
+</html>
