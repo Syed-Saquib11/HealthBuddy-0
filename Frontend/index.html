@@ -15,13 +15,21 @@
       border-radius: 12px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
+
+    .quick-access .card:hover,
+.quick-access .card:focus {
+  transform: scale(1.06);
+  box-shadow: 0 6px 20px rgba(44, 92, 196, 0.14);
+  cursor: pointer;
+}
   </style>
 
 </head>
 <body>
   <header class="main-header">
   <div class="navbar-container">
-    <a class="brand" href="index.html">Health Buddy</a>
+    <img src="assests/logo.jpg" alt="">
+    <a class="brand" href="index.html"><span class="health">Health</span><span class="buddy"> Buddy</span></a>
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="outbreak.html">Outbreak Tracking</a>
@@ -35,9 +43,9 @@
 
   <main class="container">
     <section class="intro">
-      <h2> Greetings, Name</h2>
+      <h2> Greetings</h2>
       <div class="intro2">
-        <h2>Welcome to the Health Buddy</h2>
+        <h2>Welcome to Health Buddy</h2>
         <p>
           Every year, preventable diseases affect millions because of delayed information.
   Health Buddy bridges this gap by enabling quick outbreak tracking, easy reporting, and reliable awareness.
@@ -59,7 +67,8 @@
 
 
       <!-- Quick Access -->
-  <h6 class="fw-bold"><h3> Quick Access </h3></h6>
+       <h3> Quick Access</h3>
+  <!-- <h6 class="fw-bold"><h3> Quick Access </h3></h6> -->
   <div class="row quick-access my-2">
     <div class="col-6 mb-3">
       <div class="card">
@@ -70,7 +79,7 @@
     <div class="col-6 mb-3">
       <div class="card">
         <i class="bi bi-capsule display-6 text-danger"></i>
-        <p class="mt-2">Medicines</p>
+        <p class="mt-2">Awareness</p>
       </div>
     </div>
     <div class="col-6 mb-3">
@@ -116,7 +125,7 @@
 
   </main>
   <footer>
-    <div class="container">
+    <div>
       <p>&copy; 2025 Health Buddy. All rights reserved.</p>
     </div>
   </footer>

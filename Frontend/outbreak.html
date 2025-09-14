@@ -6,10 +6,8 @@
   <title>Outbreak Tracking - Health Buddy</title>
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    /* Inline CSS for the page */
     body {
       font-family: Arial, sans-serif;
-      /* margin: 1rem; */
       background: #f9f9f9;
       color: #333;
     }
@@ -30,21 +28,6 @@
       margin: 0.5rem auto 1rem auto;
       display: block;
       font-size: 1rem;
-    }
-    #cityMap {
-      width: 90%;
-      max-width: 700px;
-      height: 300px;
-      margin: 0 auto 2rem auto;
-      background: #ddd;
-      border: 2px solid #999;
-      border-radius: 6px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      font-style: italic;
-      color: #666;
-      user-select:none;
     }
     #diseaseTrends {
       width: 90%;
@@ -88,76 +71,149 @@
       margin-top: 0.3rem;
       font-style: italic;
     }
+    #ux4g-map {
+      height: 500px;
+      min-width: 310px;
+      max-width: 800px;
+      margin: 0 auto 2rem auto;
+    }
   </style>
 </head>
 <body>
 
   <header class="main-header">
-  <div class="navbar-container">
-    <a class="brand" href="index.html">Health Buddy</a>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="outbreak-tracking.html">Outbreak Tracking</a>
-      <a href="report.html">Report a Disease</a>
-      <a href="common-disease.html">Common Diseases</a>
-    </nav>
-    <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
-  </div>
-</header>
-
-
-
+    <div class="navbar-container">
+      <img src="assests/logo.jpg" alt="">
+      <a class="brand" href="index.html"><span class="health">Health</span><span class="buddy"> Buddy</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="outbreak.html">Outbreak Tracking</a>
+        <a href="report.html">Report a Disease</a>
+        <a href="common-disease.html">Common Diseases</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+    </div>
+  </header>
 
   <main class="container">
-  <h1>Health Buddy: Community & Official Outbreak Insights</h1>
-  <p class="motive-desc">
-    Stay informed about disease outbreaks in your region by viewing combined data from official health sources and community reports. Select your city, explore trending diseases, and view interactive trends to protect yourself and your loved ones.
-  </p>
+    <h1>Health Buddy: Community & Official Outbreak Insights</h1>
+    <p class="motive-desc">
+      Stay informed about disease outbreaks in your region by viewing combined data from official health sources and <br>
+      community reports. Select your city, explore trending diseases, and view interactive trends to protect yourself<br>
+      and your loved ones.
+    </p>
 
-  <label for="citySelect" style="display: block; text-align:center; font-weight: bold;">Select City</label>
-  <select id="citySelect" aria-label="Select a city to view outbreak trends">
-    <option value="">-- Choose a city --</option>
-    <!-- Cities will be dynamically populated based on data -->
-  </select>
+    <label for="citySelect" style="display: block; text-align:center; font-weight: bold;">Select City</label>
+    <select id="citySelect" aria-label="Select a city to view outbreak trends">
+      <option value="">-- Choose a city --</option>
+      <!-- Cities will be dynamically populated based on data -->
+    </select>
 
-  <div id="cityMap" aria-live="polite" role="region" aria-label="Map placeholder for selected city">
-    Map for selected city will appear here (Coming soon)
-  </div>
+    <!-- INDIA MAP INTEGRATION -->
+    <div>
+      <div id="ux4g-map"></div>
+    </div>
 
-  <section id="diseaseTrends" aria-live="polite" role="region" aria-label="Trending diseases and charts">
-    <h2>Trending Diseases</h2>
-    <ul id="diseaseList" tabindex="0" aria-label="List of trending diseases">
-      <!-- Disease list items dynamic here -->
-    </ul>
-    <canvas id="trendChart" role="img" aria-label="Disease trend chart"></canvas>
-    <div id="sourceInfo" class="source-label"></div>
-  </section>
+    <section id="diseaseTrends" aria-live="polite" role="region" aria-label="Trending diseases and charts">
+      <h2>Trending Diseases</h2>
+      <ul id="diseaseList" tabindex="0" aria-label="List of trending diseases">
+        <!-- Disease list items dynamic here -->
+      </ul>
+      <canvas id="trendChart" role="img" aria-label="Disease trend chart"></canvas>
+      <div id="sourceInfo" class="source-label"></div>
+    </section>
   </main>
   
   <footer>
-    <div class="container">
+    <div>
       <p>&copy; 2025 Health Buddy. All rights reserved.</p>
     </div>
   </footer>
 
-
-  <!-- Load Chart.js CDN -->
+  <!-- Chart.js and Other Project Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="js/outbreak-tracking.js"></script>
+
+  <!-- Responsive Navbar Script -->
   <script>
-const toggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-toggle.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-});
-</script>
- <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  </script>
 
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onload=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="HD3kMo_iaMbj16OvnH4nn";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onload()}else{window.addEventListener("load",onload)}})();
+  <!-- Chatbase Widget -->
+  <script>
+  (function(){
+    if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+      window.chatbase=(...arguments)=>{
+        if(!window.chatbase.q){window.chatbase.q=[]}
+        window.chatbase.q.push(arguments)
+      };
+      window.chatbase=new Proxy(window.chatbase,{
+        get(target,prop){
+          if(prop==="q"){return target.q}
+          return(...args)=>target(prop,...args)}
+      })
+    }
+    const onload=function(){
+      const script=document.createElement("script");
+      script.src="https://www.chatbase.co/embed.min.js";
+      script.id="HD3kMo_iaMbj16OvnH4nn";
+      script.domain="www.chatbase.co";
+      document.body.appendChild(script)
+    };
+    if(document.readyState==="complete"){onload()}else{window.addEventListener("load",onload)}
+  })();
+  </script>
 
+  <!-- UX4G India Map Scripts (must be after DOM elements, before usage) -->
+  <script src="https://cdn.ux4g.gov.in/UX4G@2.0.8/js/ux4g-map.js"></script>
+  <script src="https://cdn.ux4g.gov.in/UX4G@2.0.8/js/ux4g-map-all.js"></script>
+  <script>
+    // Data for states (copy as needed, full array from UX4G sample)
+    var data = [
+      ['in-py', 0], ['in-ld', 1], ['in-wb', 2], ['in-or', 3], ['in-br', 4],
+      ['in-sk', 5], ['in-ct', 6], ['in-tn', 7], ['in-mp', 8], ['in-2984', 9],
+      ['in-ga', 10], ['in-nl', 11], ['in-mn', 12], ['in-ar', 13], ['in-mz', 14],
+      ['in-tr', 15], ['in-3464', 16], ['in-dl', 17], ['in-hr', 18], ['in-ch', 19],
+      ['in-hp', 20], ['in-jk', 21], ['in-kl', 22], ['in-ka', 23], ['in-dn', 24],
+      ['in-mh', 25], ['in-as', 26], ['in-ap', 27], ['in-ml', 28], ['in-pb', 29],
+      ['in-rj', 30], ['in-up', 31], ['in-ut', 32], ['in-jh', 33]
+    ];
 
+    // Create the map chart in the #ux4g-map div
+    UX4Gmap.mapChart('ux4g-map', {
+      chart: { map: 'countries/in/in-all' },
+      title: { text: '' },
+      subtitle: { text: '' },
+      legend: { enabled: false },
+      tooltip: {
+        useHTML: true,
+        headerFormat: '',
+        pointFormat: `<div style="color: white; background-color: #212121; padding: 4px 8px; border-radius: 6px; position: relative;">
+                        {point.name}
+                        <div style="width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 8px solid #212121; margin: 0 auto; position: absolute; left: 50%; transform: translateX(-50%); bottom: -8px;"></div>
+                      </div>`,
+        backgroundColor: null
+      },
+      navigation: { buttonOptions: { enabled: false } },
+      credits: { enabled: false },
+      series: [{
+        data: data,
+        allowPointSelect: true,
+        cursor: 'pointer',
+        color: '#FBF2FF',
+        borderColor: '#AC99F3',
+        borderWidth: 1,
+        states: {
+          hover: { borderColor: '#774BFF' },
+          select: { color: '#774BFF' }
+        },
+        dataLabels: { enabled: false }
+      }]
+    });
   </script>
 </body>
 </html>
-
-
