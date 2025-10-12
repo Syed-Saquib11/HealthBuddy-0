@@ -4,135 +4,156 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Health Buddy - Home</title>
-  <link rel="stylesheet" href="css/style.css">
-   <!-- Icons -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style1.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    .quick-access .card {
-      text-align: center;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .quick-access .card:hover,
-.quick-access .card:focus {
-  transform: scale(1.06);
-  box-shadow: 0 6px 20px rgba(44, 92, 196, 0.14);
-  cursor: pointer;
-}
-  </style>
-
 </head>
 <body>
   <header class="main-header">
-  <div class="navbar-container">
-    <img src="assests/logo.jpg" alt="">
-    <a class="brand" href="index.html"><span class="health">Health</span><span class="buddy"> Buddy</span></a>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="outbreak.html">Outbreak Tracking</a>
-      <a href="report.html">Report a Disease</a>
-      <a href="common-disease.html">Common Diseases</a>
-    </nav>
-    <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
-  </div>
-</header>
-
+    <div class="navbar-container">
+      <div class="brand-section">
+        <img id="logo"  src="assests/logo.jpg" alt="Health Buddy Logo">
+        <a class="brand" href="index.html"><span class="health">Health </span> <span class="buddy">Buddy</span></a>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="outbreak.html">Outbreak Tracking</a>
+        <a href="report.html">Report a Disease</a>
+        <a href="common-disease.html">Common Diseases</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+    </div>
+  </header>
 
   <main class="container">
-    <section class="intro">
-      <h2> Greetings</h2>
-      <div class="intro2">
-        <h2>Welcome to Health Buddy</h2>
-        <p>
-          Every year, preventable diseases affect millions because of delayed information.
-  Health Buddy bridges this gap by enabling quick outbreak tracking, easy reporting, and reliable awareness.
-  We believe knowledge is the best medicine — and we bring it to your fingertips.
-        </p>
-        </div>
-    </section>
-
-    <!-- <section class="features">
-      <h3>Features</h3>
-      <ul>
-        <li ><a href="report.html">Report</a></li>
-        <li ><a href="outbreak.html">Outbreak tracking</a></li>
-        <li><a href="common-disease.html">Common Disease</a></li>
-        <li><a href="">Ai syntom checker</a></li>
-        <li><a href="">fsfsdf</a></li>
-      </ul>
-    </section> -->
-
-
-      <!-- Quick Access -->
-       <h3> Quick Access</h3>
-  <!-- <h6 class="fw-bold"><h3> Quick Access </h3></h6> -->
-  <div class="row quick-access my-2">
-    <div class="col-6 mb-3">
-      <div class="card">
-        <i class="bi bi-bug display-6 text-primary"></i>
-        <p class="mt-2"><a href="outbreak.html" style="text-decoration:none; color: #000;">Outbreak Tracking</a> </p>
-      </div>
-    </div>
-    <div class="col-6 mb-3">
-      <div class="card">
-        <i class="bi bi-capsule display-6 text-danger"></i>
-        <p class="mt-2">Awareness</p>
-      </div>
-    </div>
-    <div class="col-6 mb-3">
-      <div class="card">
-        <i class="bi bi-exclamation-circle display-6 text-info"></i>
-        <p class="mt-2"><a href="report.html" style="text-decoration:none; color: #000;">Report Disease</a></p>
-      </div>
-    </div>
-    <div class="col-6 mb-3">
-      <div class="card">
-        <i class="bi bi-heart-pulse display-6 text-warning"></i>
-        <p class="mt-2"><a href="common-disease.html" style="text-decoration:none; color: #000;">Common Disease</a></p>
-      </div>
-    </div>
-  </div>
-    <section class="hot-outbreaks">
-      <h3>Hot Outbreaks</h3>
-      <div id="hotOutbreaks">
-        <!-- Outbreak data will be loaded here -->
-        <p>Loading latest outbreak data...</p>
-      </div>
-    </section>
-
-    <!-- <section class="report-outbreak">
-      <h3>Report Outbreak</h3>
-      <div id="hotOutbreaks">
-        < Outbreak data will be loaded here>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae in culpa neque autem laboriosam nulla quod placeat fugiat fugit nisi?</p>
-      </div>
-      <button><a href="report.html">Click to report</a></button>
-    </section> -->
-    <section id="outbreak-cta">
-  <div id="outbreak-cta-inner">
-    <div>
-      <h2 class="outbreak-cta-heading">Contribute to a Safer Community</h2>
-      <p class="outbreak-cta-desc">
-        Notice an unusual disease outbreak in your area? Help everyone stay informed by reporting it. Every report strengthens our collective response and helps keep your community safe!
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <h1 class="hero-title">Welcome to <span class="health">Health</span><span class="buddy">Buddy</span></h1>
+      <p class="hero-description">
+        Every year, preventable diseases affect millions because of delayed information.
+        Health Buddy bridges this gap by enabling quick outbreak tracking, easy reporting, and reliable awareness.
+        We believe knowledge is the best medicine — and we bring it to your fingertips.
       </p>
+    </section>
+
+    <!-- Quick Access Section -->
+    <section class="quick-access-section">
+      <h2 class="section-title">Quick Access</h2>
+      <p class="section-subtitle">Jump straight to the tools you need</p>
+      
+      <div class="quick-access-grid">
+        <a href="outbreak.html" class="quick-card">
+          <div class="card-icon blue">
+            <i class="bi bi-bug"></i>
+          </div>
+          <h3>Outbreak Tracking</h3>
+          <p>Monitor disease outbreaks in real-time across regions</p>
+        </a>
+
+        <div class="quick-card">
+          <div class="card-icon pink">
+            <i class="bi bi-capsule"></i>
+          </div>
+          <h3>Awareness</h3>
+          <p>Read articles and stay informed about health trends</p>
+        </div>
+
+        <a href="report.html" class="quick-card">
+          <div class="card-icon cyan">
+            <i class="bi bi-exclamation-circle"></i>
+          </div>
+          <h3>Report Disease</h3>
+          <p>Help your community by reporting unusual outbreaks</p>
+        </a>
+
+        <a href="common-disease.html" class="quick-card">
+          <div class="card-icon orange">
+            <i class="bi bi-heart-pulse"></i>
+          </div>
+          <h3>Common Disease</h3>
+          <p>Learn symptoms and prevention of common illnesses</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Alert Subscription Section -->
+    <section class="alert-section">
+      <div class="alert-content">
+        <div class="alert-text">
+          <h2>Stay<br> Informed with <br>Real-Time Health Alerts</h2>
+          <p>Get instant SMS and email notifications about disease outbreaks in your area. Never miss critical health updates that could protect you and your loved ones.</p>
+          <div class="alert-buttons">
+            <button class="btn-primary">
+              <i class="bi bi-bell"></i> Subscribe to Alerts
+            </button>
+            <!-- <a href="report.html" class="btn-secondary">Report a Disease</a> -->
+          </div>
+        </div>
+        <div class="alert-illustration">
+          <img src="assests/shield.jpg" alt="Health Alerts" onerror="this.style.display='none'">
+        </div>
+      </div>
+    </section>
+
+    <div class="side-by-side-sections">
+      <!-- Hot Outbreaks Section -->
+      <section class="hot-outbreaks-section">
+        <div class="outbreaks-header">
+          <i class="bi bi-exclamation-triangle"></i>
+          <h2>Hot Outbreaks</h2>
+        </div>
+        <p class="outbreaks-subtitle">Stay alert! These are the most actively reported disease outbreaks in your region right now. Early awareness helps communities respond faster and protect vulnerable populations.</p>
+        
+        <div id="hotOutbreaks" class="outbreaks-list">
+          <!-- Outbreak data will be loaded here dynamically -->
+          <p class="loading-text">Loading latest outbreak data...</p>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="cta-content">
+          <h2>Contribute to a Safer Community</h2>
+          <p>Notice an unusual disease outbreak in your area? Help everyone stay informed by reporting it. Every report strengthens our collective response and helps keep your community safe!</p>
+          <a href="report.html" class="btn-cta">Report an Outbreak</a>
+        </div>
+      </section>
     </div>
-    <a href="report.html" class="outbreak-cta-btn">Report an Outbreak</a>
-  </div>
-</section>
+
+     <!-- Featured Article Section -->
+    <section class="featured-section">
+      <h2 class="section-title">Featured This Week</h2>
+      <p class="section-subtitle">Curated insights from our awareness team</p>
+      
+      <div class="featured-card">
+        <div class="featured-image">
+          <img src="assests/article.png" id="article">
+        </div>
+        <div class="featured-content">
+          <span class="featured-badge">Article of the Week</span>
+          <h3>Invisible Enemies in Your Glass: Waterborne Disease Awareness</h3>
+          <p>Is your clear drinking water secretly dangerous? Click to learn how invisible germs spread diseases like cholera and the simple steps you must take to ensure every sip is truly safe.</p>
+          <div class="featured-meta">
+            <span><i class="bi bi-calendar"></i> Oct 11, 2025</span>
+            <span><i class="bi bi-person"></i> Diali & Team</span>
+          </div>
+          <button class="btn-read-more">
+            Read Full Article <i class="bi bi-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
 
   </main>
-  <footer>
-    <div>
+
+  <footer class="main-footer">
+    <div class="footer-content">
       <p>&copy; 2025 Health Buddy. All rights reserved.</p>
     </div>
   </footer>
 
   <script src="js/scripts.js"></script>
   <script>
-    // Load hot outbreaks immediately when page loads
     document.addEventListener('DOMContentLoaded', () => {
       loadHotOutbreaks();
     });
@@ -142,12 +163,9 @@
     toggle.addEventListener('click', () => {
       navLinks.classList.toggle('open');
     });
-</script>
- <script>
-
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onload=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="HD3kMo_iaMbj16OvnH4nn";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onload()}else{window.addEventListener("load",onload)}})();
-
+  </script>
+  <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onload=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="HD3kMo_iaMbj16OvnH4nn";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onload()}else{window.addEventListener("load",onload)}})();
   </script>
 </body>
 </html>
-
