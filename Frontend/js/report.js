@@ -55,6 +55,12 @@ async function loadCommunityReports() {
 
     container.innerHTML = ""; // clear loading message
 
+    const MAX_REPORTS = 12;
+
+    const sortedReports = reports
+    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+    .slice(0, MAX_REPORTS);
+
     reports.forEach(report => {
       const div = document.createElement("div");
       div.classList.add("report-card");
