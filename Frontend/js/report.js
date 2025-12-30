@@ -29,7 +29,7 @@ document.getElementById('reportForm').addEventListener('submit', async function 
     });
 
     if (response.ok) {
-      resultDiv.textContent = "Report submitted successfully!";
+        window.location.href = "thankyou.html";
       e.target.reset();
     } else {
       const errorData = await response.json();
@@ -55,24 +55,47 @@ async function loadCommunityReports() {
 
     container.innerHTML = ""; // clear loading message
 
-    const MAX_REPORTS = 12;
 
-    const sortedReports = reports
+  const MAX_REPORTS = 3;
+
+  const sortedReports = reports
     .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
     .slice(0, MAX_REPORTS);
 
-    reports.forEach(report => {
-      const div = document.createElement("div");
-      div.classList.add("report-card");
-      div.innerHTML = `
-        <strong>Disease:</strong> ${report.disease_name} <br />
-        <strong>Location:</strong> ${report.city}, ${report.state} <br />
-        <strong>Severity:</strong> ${report.severity} <br />
-        <strong>Cases Reported:</strong> ${report.cases_reported ?? "N/A"} <br />
-        <small>Reported on: ${new Date(report.created_at).toLocaleDateString()}</small>
-      `;
-      container.appendChild(div);
-    });
+  sortedReports.forEach(report => {
+    const div = document.createElement("div");
+    div.classList.add("report-card");
+
+    div.innerHTML = `
+      <strong>Disease:</strong> ${report.disease_name} <br />
+      <strong>Location:</strong> ${report.city}, ${report.state} <br />
+      <strong>Severity:</strong> ${report.severity} <br />
+      <strong>Cases Reported:</strong> ${report.cases_reported ?? "N/A"} <br />
+      <small>Reported on: ${new Date(report.created_at).toLocaleDateString()}</small>
+    `;
+
+    container.appendChild(div);
+  });
+
+
+    // const MAX_REPORTS = 12;
+
+    // const sortedReports = reports
+    // .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+    // .slice(0, MAX_REPORTS);
+
+    // reports.forEach(report => {
+    //   const div = document.createElement("div");
+    //   div.classList.add("report-card");
+    //   div.innerHTML = `
+    //     <strong>Disease:</strong> ${report.disease_name} <br />
+    //     <strong>Location:</strong> ${report.city}, ${report.state} <br />
+    //     <strong>Severity:</strong> ${report.severity} <br />
+    //     <strong>Cases Reported:</strong> ${report.cases_reported ?? "N/A"} <br />
+    //     <small>Reported on: ${new Date(report.created_at).toLocaleDateString()}</small>
+    //   `;
+    //   container.appendChild(div);
+    // });
 
   } catch (error) {
     container.innerHTML = `<p>Error loading reports: ${error.message}</p>`;
