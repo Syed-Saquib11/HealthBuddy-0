@@ -1,0 +1,8 @@
+pdfplumber
+pandas
+regex
+pytesseract
+pdf2image
+Pillow
+requests
+beautifulsoup4
